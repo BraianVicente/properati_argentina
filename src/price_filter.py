@@ -35,10 +35,6 @@ def property_filter_price(df)
         'place_with_parent_names_l2', 'properati_url','surface_in_m2',\
         'title'],axis=1)
 
-
-
-    df[df['zone'] == ''][['lon','lat','place_with_parent_names','place_name']].shape
-
     # Podemos seguir trabajando con los datos que no cuentan con la informa-
     # cion de Zona utilizando la ubicacion para identificarlos segun el ba-
     # rrio al que pertenecen pero en esta ocacion decidimos dejarlos de lado
@@ -94,10 +90,6 @@ def property_filter_price(df)
     df = df[(df['price_aprox_usd'] < 600000) & \
         (df['price_usd_per_m2'] < 5000) & \
         (df['surface_total_in_m2'] < 1000)]
-
-
-
-
 
 
 def dataframe_calc_value(df,incognita,divisor,dividendo):
