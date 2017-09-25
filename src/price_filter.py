@@ -5,7 +5,7 @@ import numpy as np
     # https://github.com/BraianVicente/properati_argentina/blob/master/src/TP1%20-%20Properati%20-%20Parseo%20de%20datos%20por%20fecha.ipynb)
 
 
-def property_filter_price(df)
+def property_filter_price(df):
     df['created_on'] = df['created_on'].apply(lambda x : pd.to_datetime(x))
 
     df['year'] = df['created_on'].apply(lambda x : x.year)
@@ -90,6 +90,8 @@ def property_filter_price(df)
     df = df[(df['price_aprox_usd'] < 600000) & \
         (df['price_usd_per_m2'] < 5000) & \
         (df['surface_total_in_m2'] < 1000)]
+
+    return df
 
 
 def dataframe_calc_value(df,incognita,divisor,dividendo):
